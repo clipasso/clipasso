@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="We present DeepSIM, a generative model for conditional image shape manipulation based on a single training image.">
+  
+  <meta property="og:title" content="Kulmus: Semantically-Aware Abstract Object Sketching"/>
+  <meta property="og:description" content="We present DeepSIM, a generative model for conditional image shape manipulation based on a single training image."/>
+  <meta property="og:url" content="http://www.vision.huji.ac.il/deepsim/"/>
+  <meta property="og:image" content="static/images/og_tag_header_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <title>Kulmus: Semantically-Aware Abstract Object Sketching</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">CLIPasso: Semantically-Aware Abstract Object Sketching</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/yael-vinker-a91a00157/" target="_blank">Yael Vinker</a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Ehsan Pajouheshgar</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Jessica Y. Bo</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Roman Christian Bachmann</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Amit Bermano</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Daniel Cohen-Or</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Amir Zamir</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Ariel Shamir</a><sup>3</sup></span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>EPFL, <sup>2</sup>Tel Aviv University</span>, <sup>3</sup>Reichman University</span> 
+                <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+              </div>
+
+         
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- PDF Link. -->
+                  <span class="link-block">
+                    <a href="static/source/sketchy.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded">
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+
+<!-- 
+                  <span class="link-block">
+                    <a href="static/source/sketchy.pdf" target="_blank"
+                    class="external-link button is-rounded">
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span> -->
+
+                <!-- SM Link. -->
+                <span class="link-block">
+                  <a href="static/source/sketchy_sup.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Supplementary</span>
+                </a>
+                </span>
+                </span>
+              <!-- Colab Link. -->
+              <span class="link-block">
+                <a href="https://github.com/yael-vinker/CLIPSketch" target="_blank"
+                class="external-link button is-normal is-rounded">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+            </span>
+               <span class="link-block">
+                <a href="https://colab.research.google.com/github/yael-vinker/CLIPSketch/blob/main/CLIPSketch.ipynb"
+                   class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                      <i class="fas fa-infinity"></i>
+                  </span>
+                  <span>Colab</span>
+                </a>
+              </span>
+            
+            <!-- ArXiv Link -->
+           
+
+
+
+
+              <!-- TODO Add dataset link -->
+              <!-- TODO Add replicate link -->
+              <!-- TODO Add colab link -->
+              <!-- Colab Link. -->
+            <!--   <span class="link-block">
+                <a href="" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Colab</span>
+                </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/gifs/classes_art.mp4"
+        type="video/mp4">
+      </video> -->
+<!-- 
+<section class="hero is-small"> -->
+  <!-- <div class="hero-body"> -->
+<section class="hero teaser">
+ <!--  <div class="container is-max-desktop"> -->
+    <div class="hero-body">
+      <!-- <div id="results-carousel" class="carousel results-carousel"> -->
+      <div class="container">
+      <div class="item">
+
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/gifs/horse_all.mp4"
+        type="video/mp4"> 
+      </video>
+      
+      <h2 class="subtitle">
+        Our work converts an image of an object to a sketch, allowing for varying levels of abstraction, while preserving its key visual features. Even with a very minimal representation (the rightmost flamingo and horse are drawn with only a few strokes), one can recognize both the semantics and the structure of the subject depicted. 
+      </h2>
+    </div>
+  <!-- </div> -->
+ <!--  </div> -->
+  </div>
+  </div>
+ <!--  </div> -->
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="item">
+          <p style="margin-bottom: 30px">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <source src="static/figures/papers_179s2-yaml8_video.mp4"
+          type="video/mp4">
+        </video>
+        </p>
+        </div>
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Abstraction is at the heart of sketching due to the simple and minimal nature of line drawings.
+            Abstraction entails identifying the essential visual properties of an object or scene, which requires semantic understanding and prior knowledge of high-level concepts.
+            Abstract depictions are therefore challenging for artists, and even more so for machines.
+            We present an object sketching method that can achieve different levels of abstraction, guided by geometric and semantic simplifications.
+            While sketch generation methods often rely on explicit sketch datasets for training, we utilize the remarkable ability of CLIP (Contrastive-Language-Image-Pretraining) to distill semantic concepts from sketches and images alike.
+            We define a sketch as a set of Bézier curves and use a differentiable rasterizer to optimize the parameters of the curves directly with respect to a CLIP-based perceptual loss.
+            The abstraction degree is controlled by varying the number of strokes.
+            The generated sketches demonstrate multiple levels of abstraction while maintaining recognizability, underlying structure, and essential visual components of the subject drawn.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title has-text-centered">Object to Sketch Synthesis with Different Levels of Abstraction</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+       <!-- <div class="item">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/gifs/classes_art.mp4"
+        type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          DeepSIM was trained on a <em>single</em> training pair, shown to the left of each sample. First row "face" output- (left) flipping eyebrows, (right) lifting nose. Second row "dog" output- changing shape of dog's hat, removing ribbon, and making face longer. Second row "car" output-  (top) adding wheel, (bottom) conversion to sports car.
+        </h2>
+      </div> -->
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/rose.png" alt="cars peace"/>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/camel.png" alt="cars peace"/>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/cat1.png" alt="cars peace"/>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/flamingo.png" alt="cars peace"/>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/giraffe.png" alt="cars peace"/>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/elephant.png" alt="cars peace"/>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/dog.png" alt="cars peace"/>
+      </div>
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/men.png" alt="cars peace"/>
+      </div>
+     
+    
+  </div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+<section class="section hero is-light">
+  <!-- <div class="container is-max-desktop"> -->
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">How does it work?</h2>
+        <div class="content has-text-justified">
+          <p>
+
+            Our method is optimization-based and therefore does not require any explicit sketch dataset. 
+            We use the CLIP image encoder to guide the process of converting a photograph to an abstract sketch.
+
+            CLIP encoding provides the semantic understanding of the concept depicted, while the photograph itself provides the geometric grounding of the sketch to the concrete subject.
+
+            We define a sketch as a set of N black strokes placed on a white background.
+            We vary the number of strokes N to create different levels of abstraction. 
+          </p>
+        </div>
+        <div class="column is-centered has-text-centered">
+        <img src="static/figures/pipeline_final.png" alt="cars peace"/>
+      </div>
+        <div class="content has-text-justified">
+          <p>
+            Given a target image I of the desired subject, our goal is to synthesize the corresponding sketch S while maintaining both the semantic and geometric attributes of the subject.
+            We begin by extracting the salient regions of the input image to define the initial locations of the strokes.
+            Next, in each step of the optimization we feed the stroke parameters to a differentiable rasterizer to produce the rasterized sketch. The resulting sketch, as well as the original image are then fed into CLIP to define a CLIP-based perceptual loss. 
+            The key to the success of our method is to use the intermediate layers of a pretrained CLIP model to constrain the geometry of the output sketch. Without this term, the output sketch would not be similar to the input image.
+            We back-propagate the loss through the differentiable rasterizer and update the strokes' control points directly at each step until convergence of the loss function.
+            The learned parameters and loss terms are highlighted in red, while the blue components are frozen during the entire optimization process, solid arrows are used to mark the backpropagation path.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  <!-- </div> -->
+</section> 
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <!-- <h2 class="title is-3">ICCV Presentation</h2> -->
+      <div class="columns is-centered has-text-centered">
+        
+        <div class="item">
+        <p style="margin-top: 30px">
+
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/gifs/classes_art.mp4"
+        type="video/mp4">
+        </video>
+        <h2 class="subtitle">
+          Our approach is different from conventional sketching methods in that it does not utilize a sketch dataset for training, rather it is optimized under the guidance of CLIP. Thus, our method is not limited to specific categories observed during training, as no category definition was introduced at any stage. This makes our method robust to various inputs.
+        </h2>
+        </p>
+        </div>
+        </div>
+      </div>
+      <!--/ Paper video. -->
+    </div>
+</section>
+
+
+
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- <p style="margin-top: 30px; margin-bottom: 30px"> -->
+      <h2 class="title has-text-centered">Editing the Brush Style on SVGs</h2>
+      <!-- </p> -->
+      
+      <div id="results-carousel" class="carousel results-carousel">
+        <!-- <div class="column is-centered has-text-centered">
+        <img src="static/figures/styles/abstractions_controlpoints.png" width="1000" height="400" class="is-centered"/>
+        </div> -->
+        <div class="column is-centered has-text-centered">
+        <img src="static/figures/styles/flamingo_a2.png" width="400" height="400" class="is-centered"/>
+        </div>
+        <div class="column is-centered has-text-centered">
+        <img src="static/figures/styles/horse.png" width="400" height="400"/>
+        </div>
+        <div class="columns is-centered has-text-centered">
+        <img src="static/figures/styles/women7.png" width="400" height="400"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper poster -->
+
+      <h2 class="title has-text-centered">Sketching "in the wild": results of 100 random images of cats from SketchCOCO</h2>
+      <p style="margin-top: 30px; margin-bottom: 30px">
+      <!-- <div class="column is-four-fifths"> -->
+          <div class="column is-centered has-text-centered">
+        <img src="static/figures/cats2.png" alt="cars peace"/>
+      </div>
+       </p>
+        <!--/ Paper poster -->
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <!-- <pre><code>@InProceedings{Vinker_2021_ICCV,
+        author    = {Vinker, Yael and Horwitz, Eliahu and Zabari, Nir and Hoshen, Yedid},
+        title     = {Image Shape Manipulation From a Single Augmented Training Sample},
+        booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+        month     = {October},
+        year      = {2021},
+        pages     = {13769-13778}
+      }</code></pre> -->
+    </div>
+    <div class="container">
+     <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The single image animation primitives were created by Jonathan Reich <a href="mailto:jonathanreichandco@gmail.com">jonathanreichandco@gmail.com </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+      href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">
+      <i class="fas fa-file-pdf"></i>
+    </a>
+    <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+        <p>
+          This website is licensed under a <a rel="license"
+          href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+        Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+      <p>
+        Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project page. If you want to reuse their <a
+        href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them appropriately.
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+</footer>
+
+<!-- Default Statcounter code for DeepSIM
+  http://www.vision.huji.ac.il/deepsim/ -->
+  <script type="text/javascript">
+    var sc_project=12351448; 
+    var sc_invisible=1; 
+    var sc_security="c676de4f"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img
+    class="statcounter"
+    src="https://c.statcounter.com/12351448/0/c676de4f/1/"
+    alt="Web Analytics"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
